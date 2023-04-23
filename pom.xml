@@ -1,0 +1,95 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  
+ 	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.jeyzer.util.logging</groupId>
+	<artifactId>jeyzer-logger</artifactId>
+	<version>3.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+	<name>Jeyzer Util Logger</name>
+		<url>https://github.com/jeyzer-community/jeyzer-logger</url>
+	<description>The Jeyzer Logger, derived from the OpenJDK Java 8 java.util.logger package, without the java.util.manager property</description>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<build>
+		<!-- finalName>${project.artifactId}</finalName --> 
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+						<manifest>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+						<manifestEntries>
+                        	<Built-By></Built-By>
+                    	</manifestEntries>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>  
+
+	<licenses>
+		<license>
+			<name>GPL License</name>
+		</license>
+	</licenses>
+	
+	<developers>
+		<developer>
+			<id>jeyzer-community-admin</id>
+			<name>Jeyzer Community Admin</name>
+			<email>jeyzer-community-admin@jeyzer.org</email>
+			<url>https://jeyzer.org/contribute-and-share/</url>
+			<organization>Jeyzer</organization>
+			<organizationUrl>https://jeyzer.org</organizationUrl>
+			<roles>
+				<role>administrator</role>
+			</roles>
+		</developer>
+	</developers>
+	
+	<organization>
+		<name>Jeyzer</name>
+		<url>https://jeyzer.org</url>
+	</organization>
+	<inceptionYear>2023</inceptionYear>
+
+	<scm>
+		<url>https://github.com/jeyzer-community/jeyzer-recorder</url>
+		<connection>scm:git:ssh://git@github.com/jeyzer-community/jeyzer-logger.git</connection>
+		<developerConnection>scm:git:ssh://git@github.com/jeyzer-community/jeyzer-logger.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	
+</project>
